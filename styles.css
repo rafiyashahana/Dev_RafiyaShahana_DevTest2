@@ -24,7 +24,7 @@ body {
 .section-container {
   max-width: var(--max-width);
   margin: auto;
-  padding: 5rem 1rem;
+  padding: 5rem 128px;
 }
 nav {
   display: flex;
@@ -68,4 +68,26 @@ nav a span {
   position: absolute;
   bottom: -1px;
   left: 0;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 226px;
+  border: solid red;
+}
+.header-content h1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 72px;
+  color: var(--white);
+}
+
+.header-content h1 span {
+  font-family: sans-serif;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.1rem white;
+  -webkit-font-smoothing: antialiased;
 }
