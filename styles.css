@@ -61,7 +61,7 @@ nav a span {
 .header-container {
   background: url("./assets/images/header.png") no-repeat;
   height: 650px;
-  padding: 1rem 5rem;
+  padding: 20.5px 128px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -214,4 +214,66 @@ input:focus {
 }
 .btn-submit:active {
   background-color: #35bb9c;
+}
+.understand-container {
+  height: 700px;
+  background-color: #f5f5f5;
+  padding-top: 80px;
+  padding-bottom: 130px;
+}
+.understand-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 36px;
+  margin-bottom: 64px;
+}
+.understand-images img {
+  border-radius: 8px;
+  width: 100%;
+}
+.understand-container h2 {
+  color: var(--text-dark);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 46px;
+  margin-bottom: 32px;
+}
+
+.understand-container h2 span {
+  -webkit-text-stroke: 1px var(--text-dark);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+.understand-text {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 35px;
+}
+.understand-text p {
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.btn-outline {
+  margin-top: 10px;
+  gap: 8px;
+  border-radius: 4px;
+  border: 2px solid var(--light-green);
+  height: 52px;
+  line-height: 28px;
+  font-weight: 700;
+  font-size: 18px;
+  max-width: 371px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-outline span {
+  color: var(--light-green);
+}
+.btn-outline img {
+  width: 17px;
 }
