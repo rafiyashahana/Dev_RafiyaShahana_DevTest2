@@ -109,14 +109,14 @@ nav a span {
   max-width: 601px;
 }
 .form-container {
-  padding: 52px;
+  padding: 51px 28px 56px;
   border-radius: 12px;
   background: linear-gradient(180deg, #2a7d6c 0%, rgba(62, 105, 96, 0.62) 100%);
   box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.12);
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   gap: 12px;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 .form-container h3 {
   color: var(--white);
@@ -128,7 +128,11 @@ nav a span {
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  column-gap: 16px;
+}
+.form-group:last-child {
+  grid-column: span 2;
+  margin: 16px 0 41px;
 }
 .form-group {
   display: flex;
@@ -148,15 +152,66 @@ form {
 
 .form-group label {
   order: -1;
-  padding-left: 5px;
+  padding-left: 16px;
   transition: all 0.3s ease-in;
   transform: translateY(33px);
   pointer-events: none;
   font-size: 16px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
+  display: inline-block;
+  width: fit-content;
 }
 
 input:focus + label {
-  transform: translateY(10px);
+  transform: translate(10px, 7px);
+  font-size: 13px;
+  color: var(--white);
+  background: var(--green);
+  padding-left: 0;
+}
+input:focus {
+  border: 1px solid white;
+}
+
+.form-group select {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  padding: 14px 16px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: "Montserrat", sans-serif;
+  background: url("./assets/images/Polygon.png") center no-repeat;
+  background-position: right;
+  background-position-x: 97%;
+  cursor: pointer;
+}
+
+.btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 60px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.08);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 18px;
+  background: var(--light-green);
+  width: 221px;
+  margin: auto;
+}
+.btn-submit img {
+  width: 24px;
+}
+
+.btn-submit:hover {
+  cursor: pointer;
+}
+.btn-submit:active {
+  background-color: #35bb9c;
 }
