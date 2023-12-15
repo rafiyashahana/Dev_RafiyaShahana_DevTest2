@@ -19,6 +19,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
 }
 
 .section-container {
@@ -64,10 +65,19 @@ nav a span {
   position: relative;
 }
 
-.header-container .vector {
+.header-container::before,
+.header-container::after {
+  content: "";
   position: absolute;
+  background-image: url("./assets/images/header-curve1.svg"),
+    url("./assets/images/header-curve2.svg");
+  background-repeat: no-repeat no-repeat;
+  background-position: bottom;
+  z-index: 2;
   bottom: -1px;
   left: 0;
+  height: 140px;
+  width: 100%;
 }
 
 .header-content {
@@ -86,8 +96,6 @@ nav a span {
 }
 
 .header-content h1 span {
-  font-family: sans-serif;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 0.1rem white;
-  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 1px rgb(229 229 229);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.3);
 }
