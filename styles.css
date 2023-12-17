@@ -90,7 +90,7 @@ nav a span {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 66px;
 }
 
 .header-content h1 {
@@ -523,7 +523,7 @@ input:focus {
   visibility: visible;
 }
 
-.video-container {
+/* .video-container {
   height: 650px;
   background-image: url("./assets/images/video-curve-gradient.png"),
     url("./assets/images/video-curve.png"),
@@ -537,7 +537,34 @@ input:focus {
   justify-content: center;
   align-items: center;
   position: relative;
+} */
+.video-container {
+  height: 650px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 22px;
+  justify-content: center;
+  align-items: center;
 }
+
+/* Default styles without rotation */
+.video-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("./assets/images/video-curve-gradient.png"),
+    url("./assets/images/video-curve.png"),
+    url("./assets/images/video-image-gradient.png"),
+    url("./assets/images/video-image.png");
+  background-position: left, left, right, right;
+  background-repeat: no-repeat, no-repeat, no-repeat no-repeat;
+  z-index: -3;
+}
+
 .video-container::after {
   content: url("./assets/images/logo.png");
   position: absolute;
@@ -562,13 +589,13 @@ input:focus {
 }
 
 .video-container .right-container a {
-  background-image: url("./assets/images/video-play-btn-passive.png");
+  background: url("./assets/images/video-play-btn-passive.png") no-repeat;
   width: 208px;
   height: 208px;
   z-index: 100;
 }
 .video-container .right-container a:hover {
-  background-image: url("./assets/images/video-play-btn-active.png");
+  background: url("./assets/images/video-play-btn-active.png") no-repeat;
   width: 228px;
   height: 228px;
   transition: 0.8s ease;
@@ -637,4 +664,201 @@ footer ul {
   display: flex;
   text-align: center;
   gap: 7px;
+}
+
+@media (max-width: 1440px) {
+  .section-container.header-container,
+  .section-container.understand-container,
+  .section-container.testimonial-container,
+  .section-container.organize-container,
+  .section-container.video-container {
+    overflow: hidden;
+  }
+}
+@media (max-width: 1200px) {
+  .header-content {
+    margin: 20px auto;
+  }
+  .section-container {
+    padding: 24px;
+  }
+  .testimonial-container {
+    transform: translateY(-10%);
+  }
+}
+
+@media (max-width: 999px) {
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    margin-top: 95px;
+  }
+
+  .header-container {
+    height: 1090px;
+
+    background-size: cover;
+  }
+  .testimonial-container {
+    padding: 0;
+  }
+  .video-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0 48px;
+    height: 1062px;
+  }
+  .video-container::before {
+    content: "";
+    background: url("./assets/images/gradient-responsive.png") top no-repeat,
+      url("./assets/images/gradient-curve-responsive.png") top no-repeat,
+      url("./assets/images/video-image-gradient.png") bottom no-repeat,
+      url("./assets/images/video-image.png") bottom no-repeat;
+    background-size: 100% 600px, 100% 630px, 100% 600px, 100% 600px;
+  }
+  .video-container .left-container {
+    padding: 0;
+  }
+  .video-container::after {
+    content: url("./assets/images/logo.png");
+    position: absolute;
+    right: 40%;
+    bottom: 36px;
+  }
+  .video-container .right-container a {
+    margin-bottom: 313px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* .header-container ul {
+    flex-wrap: wrap;
+    width: fit-content;
+  } */
+  .header-container ul ul {
+    display: block;
+  }
+
+  .understand-container {
+    height: 768px;
+  }
+  .understand-container .understand-text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .understand-container .understand-text div {
+    position: relative;
+  }
+  .understand-container .understand-text .btn-outline {
+    position: absolute;
+    top: 0px;
+    left: 107%;
+  }
+  .testimonial-container {
+    margin: 0 -34px;
+    display: none;
+  }
+  .organize-container .organize-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 32px;
+    column-gap: 24px;
+  }
+  .organize-container .organize-text p:first-child {
+    grid-area: 1 /1 / 2 / 3;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    justify-self: center;
+  }
+  .organize-container .btns-organize-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .video-container::after {
+    content: url("./assets/images/logo.png");
+    position: absolute;
+    right: 35%;
+    bottom: 24px;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .video-container .right-container a {
+    margin-bottom: 313px;
+  }
+}
+@media (max-width: 550px) {
+  .header-container {
+    height: 1062px;
+  }
+  .header-content {
+    margin: 16px;
+  }
+  .header-container .content-left h1 {
+    font-size: 36px;
+  }
+  .header-container .content-left p {
+    font-size: 14px;
+  }
+  .form-container {
+    width: 328px;
+  }
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  .understand-container .understand-images {
+    display: none;
+  }
+  .understand-container {
+    margin-bottom: 0;
+  }
+  .understand-container .understand-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .understand-container .understand-text div {
+    position: relative;
+  }
+  .understand-container .understand-text .btn-outline {
+    position: absolute;
+    top: 110%;
+    left: 10%;
+    margin-bottom: 0;
+  }
+  .organize-container .organize-text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .organize-container .btns-organize-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .video-container .left-container {
+    padding: 80px auto;
+  }
+  .video-container h2 {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .video-container::before {
+    content: "";
+    background: url("./assets/images/gradient-responsive.png") top no-repeat,
+      url("./assets/images/gradient-curve-responsive.png") top no-repeat,
+      url("./assets/images/video-image-gradient.png") bottom no-repeat,
+      url("./assets/images/video-image.png") bottom no-repeat;
+    background-size: 100% 700px, 100% 730px, 100% 600px, 100% 600px;
+  }
 }
