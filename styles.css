@@ -469,64 +469,19 @@ input:focus {
   opacity: 1;
   visibility: visible;
 }
-/* 
-.video-container {
-  background: rgba(25, 77, 68, 0.3),
-    url("./assets/images/video-image.png") center repeat;
-  background-repeat: no-repeat;
-  background-position: right;
-  height: 650px;
-  background-size: contain;
-  position: relative;
-  z-index: -1;
-}
-
-
-
-
-
-.left-container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50%;
-  background: url("./assets/images/video-gradient-curve.png") no-repeat;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: solid blue;
-}
-.video-container .left-container::before {
-  content: "";
-  background: url("./assets/images/video-curve.png") center no-repeat;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-}
-
-.right-container {
-  position: absolute;
-  right: 0;
-  top: 0;
-  border: solid red;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 
 .video-container {
   height: 650px;
+
   background-image: url("./assets/images/video-curve-gradient.png"),
     url("./assets/images/video-curve.png"),
+    url("./assets/images/video-image-gradient.png"),
     url("./assets/images/video-image.png");
-  background-position: left, left, right;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  display: flex;
+  background-position: left, left, right, right;
+  background-repeat: no-repeat, no-repeat, no-repeat no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 22px;
   justify-content: center;
   align-items: center;
 }
@@ -535,7 +490,18 @@ input:focus {
   width: 208px;
 }
 .video-container .left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+.video-container .right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .video-container h2 {
   color: var(--white);
   font-size: 44px;
@@ -563,8 +529,6 @@ input:focus {
 }
 
 .video-container p {
-  border: solid red;
-  /* width: 430px; */
   color: rgba(255, 255, 255, 0.8);
   font-size: 18px;
   font-weight: 400;
