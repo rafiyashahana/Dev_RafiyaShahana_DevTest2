@@ -347,17 +347,18 @@ input:focus {
   fill: var(--light-green);
 }
 
-.testimonial-container .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+.testimonial-container .fades {
+  animation: fade 0.3s ease-in-out;
+  display: flex;
+  gap: 35px;
 }
 
 @keyframes fade {
   from {
-    opacity: 0.4;
+    transform: translateX(0);
   }
   to {
-    opacity: 1;
+    transform: translateX(5%);
   }
 }
 
@@ -383,7 +384,14 @@ input:focus {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
   height: 269px;
+  position: relative;
   overflow: hidden;
+}
+.testimonial-container .testimonial .testimonial-content::after {
+  content: url("./assets/images/“.png");
+  position: absolute;
+  top: 12px;
+  right: 65px;
 }
 
 .testimonial-content h6 {
