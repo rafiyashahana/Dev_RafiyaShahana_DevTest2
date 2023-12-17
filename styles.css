@@ -99,7 +99,7 @@ nav a span {
 
 .header-content h1 span {
   -webkit-text-stroke: 1px var(--white);
-  -webkit-text-fill-color: rgba(255, 255, 255, 0.3);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 .header-content p {
   color: var(--white);
@@ -472,7 +472,6 @@ input:focus {
 
 .video-container {
   height: 650px;
-
   background-image: url("./assets/images/video-curve-gradient.png"),
     url("./assets/images/video-curve.png"),
     url("./assets/images/video-image-gradient.png"),
@@ -484,6 +483,13 @@ input:focus {
   column-gap: 22px;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.video-container::after {
+  content: url("./assets/images/logo.png");
+  position: absolute;
+  right: 36px;
+  bottom: 36px;
 }
 
 .right-container img {
@@ -502,6 +508,19 @@ input:focus {
   align-items: center;
 }
 
+.video-container .right-container a {
+  background-image: url("./assets/images/video-play-btn-passive.png");
+  width: 208px;
+  height: 208px;
+  z-index: 100;
+}
+.video-container .right-container a:hover {
+  background-image: url("./assets/images/video-play-btn-active.png");
+  width: 228px;
+  height: 228px;
+  transition: 0.8s ease;
+  z-index: 100;
+}
 .video-container h2 {
   color: var(--white);
   font-size: 44px;
@@ -536,4 +555,8 @@ input:focus {
   margin-left: 45px;
   margin-bottom: 22px;
   display: flex;
+}
+
+.video-container .right-container img:hover {
+  display: none;
 }
