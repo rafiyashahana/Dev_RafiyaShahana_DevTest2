@@ -907,3 +907,122 @@ footer ul {
     background-size: 100% 700px, 100% 730px, 100% 600px, 100% 600px;
   }
 }
+
+.carousel-container {
+  padding-top: 0;
+  padding-bottom: 0;
+  transform: translateY(-5%);
+  border: solid red;
+}
+
+.slider-wrapper {
+  display: flex;
+  flex-direction: row;
+  border: solid blue;
+}
+
+.slide img {
+  width: 270px;
+}
+.carousal-content {
+  padding: 62px 65px 45px;
+}
+.carousal-content h6 {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.carousal-content p {
+  color: var(--white);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.slides-container {
+  /* margin: 0 54px; */
+  margin: 0 auto;
+  padding: 0 auto;
+  height: 300px;
+  display: flex;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  list-style: none;
+  border: solid orchid;
+}
+
+.carousal-container img svg path:hover {
+  cursor: pointer;
+  fill: var(--light-green);
+}
+
+.testimonial-container .fades {
+  animation: fade 0.3s ease-in-out;
+  display: flex;
+  gap: 35px;
+}
+
+.testimonial-container .testimonial {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.slide-arrow {
+  display: flex;
+  margin: auto;
+  border: none;
+  width: 350px;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 100ms;
+}
+
+.slide-arrow:hover {
+  fill: red;
+  opacity: 1;
+}
+
+#slide-arrow-prev {
+  left: 0;
+  padding-left: 0.25rem;
+  border-radius: 0 2rem 2rem 0;
+}
+
+#slide-arrow-next {
+  right: 0;
+  padding-left: 0.75rem;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.slide {
+  border: solid orange;
+  display: flex;
+  flex: 1 0 100%;
+  gap: 35px;
+}
+
+.slides-container .carousal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  /* padding: 0 65px; */
+  background-color: #194d44;
+  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.12));
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  height: 100%;
+  position: relative;
+}
+.slides-container .carousal-content::after {
+  content: url("./assets/images/“.png");
+  position: absolute;
+  top: 12px;
+  right: 65px;
+}
