@@ -53,7 +53,7 @@ nav ul {
   color: var(--white);
 }
 
-.nav-links li:first-child,
+.nav-links li .nav-active,
 .nav-links li:last-child {
   font-weight: 700;
 }
@@ -79,10 +79,16 @@ nav a span {
   background-repeat: no-repeat no-repeat;
   background-position: bottom;
   z-index: 2;
-  bottom: -1px;
+  bottom: -5px;
   left: 0;
   height: 140px;
   width: 100%;
+}
+.header-container .nav-icon {
+  margin-top: 6px;
+  width: 20px;
+  cursor: pointer;
+  display: none;
 }
 
 .header-content {
@@ -688,6 +694,21 @@ footer ul {
 }
 
 @media (max-width: 999px) {
+  .header-container .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 29px;
+    justify-content: flex-end;
+  }
+
+  .header-container .nav-links li:last-child {
+    width: 100%;
+    margin: -29px 0px;
+    text-align: right;
+  }
+  .header-container .nav-links li:nth-child(4) {
+    display: none;
+  }
   .header-content {
     display: flex;
     flex-direction: column;
@@ -732,17 +753,28 @@ footer ul {
   .video-container .right-container a {
     margin-bottom: 313px;
   }
+  .video-container h2 {
+    text-align: center;
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 768px) {
-  /* .header-container ul {
+  .header-container .nav-links {
+    display: flex;
     flex-wrap: wrap;
-    width: fit-content;
-  } */
-  .header-container ul ul {
-    display: block;
+    gap: 29px;
+    justify-content: flex-end;
   }
 
+  .header-container .nav-links li:last-child {
+    width: 100%;
+    margin: -29px px;
+    text-align: right;
+  }
+  .header-container .nav-links li:nth-child(4) {
+    display: none;
+  }
   .understand-container {
     height: 768px;
   }
@@ -801,6 +833,13 @@ footer ul {
   .header-container {
     height: 1062px;
   }
+  .header-container .nav-links {
+    display: none;
+  }
+  .header-container .nav-icon {
+    display: block;
+  }
+
   .header-content {
     margin: 16px;
   }
@@ -851,6 +890,12 @@ footer ul {
   .video-container h2 {
     text-align: center;
     margin-top: 40px;
+  }
+  .video-container h6 {
+    font-size: 18px;
+  }
+  .video-container .left-container p {
+    font-size: 14px;
   }
 
   .video-container::before {
