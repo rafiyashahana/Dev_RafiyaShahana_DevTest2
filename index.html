@@ -44,7 +44,7 @@
             <h3>Contact Us</h3>
             <form>
               <div class="input-group">
-                <input name="fname" type="text" />
+                <input name="fname" type="text" id="fname" required />
                 <label for="fname">First Name</label>
                 <div class="tooltip-form">
                   <p>This field can't be empty. Please fill it in.</p>
@@ -52,28 +52,28 @@
               </div>
 
               <div class="input-group">
-                <input name="lname" type="text" />
+                <input name="lname" type="text" id="lname" required />
                 <label for="lname">Last Name</label>
                 <div class="tooltip-form">
                   <p>This field can't be empty. Please fill it in.</p>
                 </div>
               </div>
               <div class="input-group">
-                <input name="email" type="email" />
+                <input name="email" type="text" id="email" required />
                 <label for="email">Business Email</label>
                 <div class="tooltip-form">
                   <p>This field can't be empty. Please fill it in.</p>
                 </div>
               </div>
               <div class="input-group">
-                <input name="company" type="text" />
+                <input name="company" type="text" id="company" required />
                 <label for="company">Company</label>
                 <div class="tooltip-form">
                   <p>This field can't be empty. Please fill it in.</p>
                 </div>
               </div>
               <div class="input-group">
-                <select id="country" class="country">
+                <select id="country" class="country" required>
                   <option>Country</option>
                 </select>
                 <div class="tooltip-form">

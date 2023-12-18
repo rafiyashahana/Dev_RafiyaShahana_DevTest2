@@ -1,18 +1,55 @@
-// const slidesContainer = document.getElementById("slides-container");
-// const slide = document.querySelector(".slide");
-// // const prevButton = document.getElementById("slide-arrow-prev");
-// const nextButton = document.getElementById("slide-arrow-next");
+//Navbar-toggle
+const navIcon = document.querySelector(".nav-icon");
+const navLinks = document.querySelector(".nav-links");
+navIcon.addEventListener("click", () => {
+  navIcon.classList.toggle("nav-active");
+  navLinks.classList.toggle("nav-links");
+});
 
-// nextButton.addEventListener("click", () => {
-//   const slideWidth = slide.clientWidth;
-//   slidesContainer.scrollLeft += slideWidth;
-// });
+//form validation
+const fname = document.querySelector("#fname");
+const lname = document.querySelector("#lname");
+const email = document.querySelector("#email");
+const company = document.querySelector("#company");
+const btnSubmit = document.querySelector(".btn-submit");
+btnSubmit.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (validate()) {
+    window.location.href = "./thankyou.html";
+  }
+});
 
-// prevButton.addEventListener("click", () => {
-//   const slideWidth = slide.clientWidth;
-//   slidesContainer.scrollLeft -= slideWidth;
-// });
+const validateField = (input) => {
+  const value = input.value.trim();
+  if (value === "") {
+    const inpGroup = input.parentElement;
+    const tooltpError = inpGroup.querySelector(".tooltip-form");
+    tooltpError.style.display = "block";
+    setTimeout(() => {
+      tooltpError.style.display = "none";
+    }, 2000);
+    return false;
+  } else {
+    const inpGroup = input.parentElement;
+    const tooltipError = inpGroup.querySelector(".tooltip-form");
 
+    tooltipError.style.display = "none";
+    input.value = "";
+
+    return true;
+  }
+};
+
+const validate = () => {
+  return (
+    validateField(fname) &&
+    validateField(lname) &&
+    validateField(email) &&
+    validateField(company)
+  );
+};
+
+//carousel slide
 let slideIndex = 1;
 function showSlide(index) {
   const slides = document.getElementsByClassName("slide");
@@ -53,11 +90,18 @@ function currentSlide(index) {
   showSlide(index);
 }
 
-//Navbar-toggle
+//carousel slider
+// const slidesContainer = document.getElementById("slides-container");
+// const slide = document.querySelector(".slide");
+// // const prevButton = document.getElementById("slide-arrow-prev");
+// const nextButton = document.getElementById("slide-arrow-next");
 
-const navIcon = document.querySelector(".nav-icon");
-const navLinks = document.querySelector(".nav-links");
-navIcon.addEventListener("click", () => {
-  navIcon.classList.toggle("nav-active");
-  navLinks.classList.toggle("nav-links");
-});
+// nextButton.addEventListener("click", () => {
+//   const slideWidth = slide.clientWidth;
+//   slidesContainer.scrollLeft += slideWidth;
+// });
+
+// prevButton.addEventListener("click", () => {
+//   const slideWidth = slide.clientWidth;
+//   slidesContainer.scrollLeft -= slideWidth;
+// });

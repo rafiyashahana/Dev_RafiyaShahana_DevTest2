@@ -175,13 +175,15 @@ form {
   width: fit-content;
 }
 
-input:focus + label {
+input:focus + label,
+input:valid + label {
   transform: translate(10px, 7px);
   font-size: 13px;
   color: var(--white);
   background: var(--green);
   padding-left: 0;
 }
+
 input:focus {
   border: 1px solid white;
 }
@@ -215,9 +217,7 @@ input:focus {
   box-shadow: 2px 2px 5px rgb(17 17 17 / 15%);
   display: none;
 }
-.input-group .tooltip-form {
-  /* display: block; */
-}
+
 .input-group .tooltip-form p {
   font-size: 13px;
   line-height: 16px;
