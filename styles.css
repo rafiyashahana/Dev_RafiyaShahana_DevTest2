@@ -46,6 +46,8 @@ nav ul {
   text-align: center;
   line-height: 41px;
   gap: 22px;
+  position: relative;
+  transition: 0.5s ease;
 }
 
 .link {
@@ -861,8 +863,28 @@ footer ul {
   }
   .header-container .nav-icon {
     display: block;
+    cursor: pointer;
+    transition: 1s ease;
   }
 
+  .nav-small {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--dark-green);
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    position: absolute;
+    right: 24px;
+    top: 45px;
+    cursor: pointer;
+    transition: 1s ease;
+  }
+
+  .nav-small li:last-child,
+  .nav-small li:nth-child(4) {
+    display: none;
+  }
   .header-content {
     margin: 16px;
   }

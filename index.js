@@ -52,3 +52,12 @@ function prevSlide() {
 function currentSlide(index) {
   showSlide(index);
 }
+
+//Navbar-toggle
+
+const navIcon = document.querySelector(".nav-icon");
+const navLinks = document.querySelector(".nav-links");
+navIcon.addEventListener("click", () => {
+  navIcon.classList.toggle("nav-active");
+  navLinks.classList.toggle("nav-links");
+});
